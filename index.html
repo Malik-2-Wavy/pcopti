@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PC Tweaks – 21 Services</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQ...') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+    .container, .download-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      backdrop-filter: blur(5px);
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .card {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      max-width: 400px;
+      text-align: center;
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 15px;
+      font-size: 1em;
+    }
+    button, .download-btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1em;
+      background-color: #1abc9c;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .hidden { display: none; }
+    .services-list {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Screen -->
+  <div class="container" id="login-screen">
+    <div class="card">
+      <h1>Login Required</h1>
+      <p>Enter your access key to continue:</p>
+      <input type="text" id="keyInput" placeholder="Enter key..." />
+      <br />
+      <button onclick="validateKey()">Login</button>
+    </div>
+  </div>
+
+  <!-- Download Page -->
+  <div class="download-container hidden" id="download-page">
+    <div class="card">
+      <div class="services-list">
+        <h1>21 Services</h1>
+        <p>Click the button below to download the PC tweaks package.</p>
+      </div>
+      <a href="https://gofile.io/d/7Yrxo6" target="_blank" class="download-btn">Download Now</a>
+    </div>
+  </div>
+
+  <script>
+    const validKeys = [
+      "21Services-Login-39482-72015",
+      "21Services-Login-10593-28467",
+      "21Services-Login-82734-91820",
+      "21Services-Login-60312-48725",
+      "21Services-Login-56298-34017",
+      "21Services-Login-73106-15982",
+      "21Services-Login-49287-67310",
+      "21Services-Login-82613-20479",
+      "21Services-Login-75820-69014",
+      "21Services-Login-34917-82563"
+    ];
+
+    function validateKey() {
+      const key = document.getElementById("keyInput").value.trim();
+      if (validKeys.includes(key)) {
+        document.getElementById("login-screen").classList.add("hidden");
+        document.getElementById("download-page").classList.remove("hidden");
+      } else {
+        alert("❌ Invalid key. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
